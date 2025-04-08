@@ -49,7 +49,7 @@
             flowLayoutPanelTop.Location = new Point(0, 0);
             flowLayoutPanelTop.Name = "flowLayoutPanelTop";
             flowLayoutPanelTop.Padding = new Padding(10);
-            flowLayoutPanelTop.Size = new Size(800, 51);
+            flowLayoutPanelTop.Size = new Size(934, 51);
             flowLayoutPanelTop.TabIndex = 0;
             // 
             // btnAddType
@@ -72,7 +72,6 @@
             bntUpdateType.TabIndex = 1;
             bntUpdateType.Text = "Редактировать";
             bntUpdateType.UseVisualStyleBackColor = true;
-            bntUpdateType.Click += BntUpdateType_Click;
             // 
             // btnDeleteType
             // 
@@ -86,15 +85,18 @@
             // 
             // dataGridViewTypes
             // 
+            dataGridViewTypes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewTypes.BackgroundColor = Color.White;
             dataGridViewTypes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTypes.Dock = DockStyle.Fill;
             dataGridViewTypes.GridColor = Color.Gray;
             dataGridViewTypes.Location = new Point(10, 10);
+            dataGridViewTypes.MultiSelect = false;
             dataGridViewTypes.Name = "dataGridViewTypes";
-            dataGridViewTypes.Size = new Size(780, 379);
+            dataGridViewTypes.ReadOnly = true;
+            dataGridViewTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewTypes.Size = new Size(914, 440);
             dataGridViewTypes.TabIndex = 3;
-            dataGridViewTypes.CellContentClick += DataGridView1_CellContentClick;
             // 
             // panelFill
             // 
@@ -103,14 +105,14 @@
             panelFill.Location = new Point(0, 51);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(800, 399);
+            panelFill.Size = new Size(934, 460);
             panelFill.TabIndex = 4;
             // 
             // FormListTypes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(934, 511);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelTop);
             Name = "FormListTypes";
