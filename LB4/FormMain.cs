@@ -6,5 +6,11 @@ namespace LB4
         {
             InitializeComponent();
         }
+
+        private void BtnShowTypes_Click(object sender, EventArgs e)
+        {
+            FormListTypes formListTypes  = new FormListTypes();
+            formListTypes.Show();
+        }
     }
 }

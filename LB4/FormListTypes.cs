@@ -16,5 +16,21 @@ namespace LB4
         {
             InitializeComponent();
         }
+
+        private void BntUpdateType_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BtnAddType_Click(object sender, EventArgs e)
+        {
+            FormAddType formAddType = new FormAddType();
+            formAddType.ShowDialog();
+        }
     }
 }
