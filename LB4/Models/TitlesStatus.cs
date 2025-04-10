@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LB4.Models;
+﻿namespace LB4.Models;
 
 public partial class TitlesStatus
 {
@@ -13,7 +10,7 @@ public partial class TitlesStatus
 
     public DateOnly? DateStatus { get; set; }
 
-    public virtual AnimeTitle IdAnimeNavigation { get; set; } = null!;
+    public virtual AnimeTitle AnimeTitle { get; set; } = null!;
 
-    public virtual Status IdStatusNavigation { get; set; } = null!;
+    public virtual Status Status { get; set; } = null!;
 }

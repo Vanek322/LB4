@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace LB4.Models;
 
@@ -96,11 +94,11 @@ public partial class AppContext : DbContext
             entity.Property(e => e.IdAnime).HasColumnName("id_anime");
             entity.Property(e => e.IdStatus).HasColumnName("id_status");
 
-            entity.HasOne(d => d.IdAnimeNavigation).WithMany(p => p.TitlesStatuses)
+            entity.HasOne(d => d.AnimeTitle).WithMany(p => p.TitlesStatuses)
                 .HasForeignKey(d => d.IdAnime)
                 .HasConstraintName("fk_titles_statuses_to_anime_titles");
 
-            entity.HasOne(d => d.IdStatusNavigation).WithMany(p => p.TitlesStatuses)
+            entity.HasOne(d => d.Status).WithMany(p => p.TitlesStatuses)
                 .HasForeignKey(d => d.IdStatus)
                 .HasConstraintName("fk_titles_statuses_to_statuses");
         });

@@ -46,18 +46,22 @@
             flowLayoutPanelTop.Controls.Add(bntUpdateType);
             flowLayoutPanelTop.Controls.Add(btnDeleteType);
             flowLayoutPanelTop.Dock = DockStyle.Top;
+            flowLayoutPanelTop.Font = new Font("Segoe UI", 14.25F);
             flowLayoutPanelTop.Location = new Point(0, 0);
+            flowLayoutPanelTop.Margin = new Padding(5);
             flowLayoutPanelTop.Name = "flowLayoutPanelTop";
             flowLayoutPanelTop.Padding = new Padding(10);
-            flowLayoutPanelTop.Size = new Size(934, 51);
+            flowLayoutPanelTop.Size = new Size(890, 65);
             flowLayoutPanelTop.TabIndex = 0;
             // 
             // btnAddType
             // 
             btnAddType.AutoSize = true;
-            btnAddType.Location = new Point(13, 13);
+            btnAddType.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            btnAddType.Location = new Point(15, 15);
+            btnAddType.Margin = new Padding(5);
             btnAddType.Name = "btnAddType";
-            btnAddType.Size = new Size(75, 25);
+            btnAddType.Size = new Size(150, 35);
             btnAddType.TabIndex = 0;
             btnAddType.Text = "Добавить";
             btnAddType.UseVisualStyleBackColor = true;
@@ -66,9 +70,11 @@
             // bntUpdateType
             // 
             bntUpdateType.AutoSize = true;
-            bntUpdateType.Location = new Point(94, 13);
+            bntUpdateType.Font = new Font("Segoe UI", 14.25F);
+            bntUpdateType.Location = new Point(175, 15);
+            bntUpdateType.Margin = new Padding(5);
             bntUpdateType.Name = "bntUpdateType";
-            bntUpdateType.Size = new Size(97, 25);
+            bntUpdateType.Size = new Size(151, 35);
             bntUpdateType.TabIndex = 1;
             bntUpdateType.Text = "Редактировать";
             bntUpdateType.UseVisualStyleBackColor = true;
@@ -77,9 +83,11 @@
             // btnDeleteType
             // 
             btnDeleteType.AutoSize = true;
-            btnDeleteType.Location = new Point(197, 13);
+            btnDeleteType.Font = new Font("Segoe UI", 14.25F);
+            btnDeleteType.Location = new Point(336, 15);
+            btnDeleteType.Margin = new Padding(5);
             btnDeleteType.Name = "btnDeleteType";
-            btnDeleteType.Size = new Size(75, 25);
+            btnDeleteType.Size = new Size(150, 35);
             btnDeleteType.TabIndex = 2;
             btnDeleteType.Text = "Удалить";
             btnDeleteType.UseVisualStyleBackColor = true;
@@ -93,30 +101,34 @@
             dataGridViewTypes.Dock = DockStyle.Fill;
             dataGridViewTypes.GridColor = Color.Gray;
             dataGridViewTypes.Location = new Point(10, 10);
+            dataGridViewTypes.Margin = new Padding(5);
             dataGridViewTypes.MultiSelect = false;
             dataGridViewTypes.Name = "dataGridViewTypes";
             dataGridViewTypes.ReadOnly = true;
             dataGridViewTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewTypes.Size = new Size(914, 440);
+            dataGridViewTypes.Size = new Size(870, 390);
             dataGridViewTypes.TabIndex = 3;
             // 
             // panelFill
             // 
             panelFill.Controls.Add(dataGridViewTypes);
             panelFill.Dock = DockStyle.Fill;
-            panelFill.Location = new Point(0, 51);
+            panelFill.Location = new Point(0, 65);
+            panelFill.Margin = new Padding(5);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(934, 460);
+            panelFill.Size = new Size(890, 410);
             panelFill.TabIndex = 4;
             // 
             // FormListTypes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(934, 511);
+            ClientSize = new Size(890, 475);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelTop);
+            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            Margin = new Padding(5);
             Name = "FormListTypes";
             Text = "Список типов аниме";
             flowLayoutPanelTop.ResumeLayout(false);

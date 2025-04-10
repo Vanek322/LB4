@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LB4.Models;
+﻿namespace LB4.Models;
 
 public partial class TitlesGenre
 {
