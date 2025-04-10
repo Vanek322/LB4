@@ -1,34 +1,38 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using AppContext = LB4.Models.AppContext;
-using Type = LB4.Models.Type;
+using Genre = LB4.Models.Genre;
 
 namespace LB4
 {
-    public partial class FormListTypes : Form
+    public partial class FormListGenres : Form
     {
         private AppContext db;
-
-
-        public FormListTypes()
+        public FormListGenres()
         {
             InitializeComponent();
         }
-
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             this.db = new AppContext();
-            this.db.Types.Load();
-            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+            this.db.Genres.Load();
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
 
             //скрытие столбцов
-            dataGridViewTypes.Columns["Id"].Visible = false;
-            dataGridViewTypes.Columns["AnimeTitles"].Visible = false;
+            dataGridViewGenres.Columns["Id"].Visible = false;
+            dataGridViewGenres.Columns["AnimeTitles"].Visible = false;
 
             //переименование заголовков столбцов
-            dataGridViewTypes.Columns["TypeName"].HeaderText = "Тип аниме";
+            dataGridViewGenres.Columns["TypeName"].HeaderText = "Жанр аниме";
 
         }
 
@@ -40,63 +44,63 @@ namespace LB4
             this.db = null;
         }
 
-        private void BtnAddType_Click(object sender, EventArgs e)
+        private void BtnAddGenre_Click(object sender, EventArgs e)
         {
-            FormAddType formAddType = new();
-            DialogResult result = formAddType.ShowDialog(this);
+            FormAddGenre formAddGenre = new();
+            DialogResult result = formAddGenre.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
             {
                 return;
             }
-            Type type = new Type();
-            type.TypeName = formAddType.textBoxTypeName.Text;
+            Genre genre = new Genre();
+            genre.GenreName = formAddGenre.textBoxGenreName.Text;
 
-            db.Types.Add(type);
+            db.Genres.Add(genre);
             db.SaveChanges();
 
             MessageBox.Show("Новый объект добавлен");
 
-            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
         }
 
-        private void BntUpdateType_Click(object sender, EventArgs e)
+        private void BntUpdateGenre_Click(object sender, EventArgs e)
         {
-            if (dataGridViewTypes.SelectedRows.Count == 0)
+            if (dataGridViewGenres.SelectedRows.Count == 0)
             {
                 return;
             }
-            int index = dataGridViewTypes.SelectedRows[0].Index;
+            int index = dataGridViewGenres.SelectedRows[0].Index;
             short id = 0;
-            bool converted = Int16.TryParse(dataGridViewTypes[0, index].Value.ToString(), out id);
+            bool converted = Int16.TryParse(dataGridViewGenres[0, index].Value.ToString(), out id);
             if (!converted)
             {
                 return;
             }
 
-            Type type = db.Types.Find(id);
-            FormAddType formAddType = new();
-            formAddType.textBoxTypeName.Text = type.TypeName;
+            Genre genre = db.Genres.Find(id);
+            FormAddGenre formAddGenre = new();
+            formAddGenre.textBoxGenreName.Text = genre.GenreName;
 
-            DialogResult result = formAddType.ShowDialog(this);
+            DialogResult result = formAddGenre.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
             {
                 return;
             }
 
-            type.TypeName = formAddType.textBoxTypeName.Text;
-            db.Types.Update(type);
+            genre.GenreName = formAddGenre.textBoxGenreName.Text;
+            db.Types.Update(genre);
             db.SaveChanges();
 
             MessageBox.Show("Объект изменен");
 
-            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
         }
 
-        private void BtnDeleteType_Click(object sender, EventArgs e)
+        private void BtnDeleteGenre_Click(object sender, EventArgs e)
         {
-            if (dataGridViewTypes.SelectedRows.Count == 0)
+            if (dataGridViewGenres.SelectedRows.Count == 0)
             {
                 return;
             }
@@ -113,9 +117,9 @@ namespace LB4
                 return;
             }
 
-            int index = dataGridViewTypes.SelectedRows[0].Index;
+            int index = dataGridViewGenres.SelectedRows[0].Index;
             short id = 0;
-            bool converted = Int16.TryParse(dataGridViewTypes[0, index].Value.ToString(), out id);
+            bool converted = Int16.TryParse(dataGridViewGenres[0, index].Value.ToString(), out id);
             if (!converted)
             {
                 return;
@@ -130,6 +134,12 @@ namespace LB4
         }
 
         private void panelFill_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void bntUpdateType_Click(object sender, EventArgs e)
         {
 
         }

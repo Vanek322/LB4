@@ -9,8 +9,14 @@ namespace LB4
 
         private void BtnShowTypes_Click(object sender, EventArgs e)
         {
-            FormListTypes formListTypes  = new FormListTypes();
+            FormListTypes formListTypes = new FormListTypes();
             formListTypes.Show();
+        }
+
+        private void BtnShowGenres_Click(object sender, EventArgs e)
+        {
+            FormListGenres formListGenres = new FormListGenres();
+            formListGenres.Show();
         }
     }
 }
