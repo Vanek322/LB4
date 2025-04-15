@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace LB4
 {
-    public partial class FormAddGenre : Form
+    public partial class FormAddStatus : Form
     {
-        public FormAddGenre()
+        public FormAddStatus()
         {
             InitializeComponent();
         }
         private void TextBoxGenreName_Validating(object sender, CancelEventArgs e)
         {
-            if (String.IsNullOrEmpty(textBoxGenreName.Text))
+            if (String.IsNullOrEmpty(textBoxStatusName.Text))
             {
-                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым");
+                errorProvider.SetError(textBoxStatusName, "Поле не может быть пустым");
                 btnSaveChanges.Enabled = false;
             }
             else
@@ -30,11 +30,11 @@ namespace LB4
             }
         }
 
-        private void TextBoxGenreName_TextChanged(object sender, EventArgs e)
+        private void TextBoxStatusName_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBoxGenreName.Text))
+            if (String.IsNullOrEmpty(textBoxStatusName.Text))
             {
-                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым");
+                errorProvider.SetError(textBoxStatusName, "Поле не может быть пустым");
                 btnSaveChanges.Enabled = false;
             }
             else

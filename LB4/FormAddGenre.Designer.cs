@@ -48,18 +48,18 @@
             flowLayoutPanelBottom.Controls.Add(btnCancel);
             flowLayoutPanelBottom.Dock = DockStyle.Bottom;
             flowLayoutPanelBottom.Location = new Point(0, 104);
-            flowLayoutPanelBottom.Margin = new Padding(5, 5, 5, 5);
+            flowLayoutPanelBottom.Margin = new Padding(5);
             flowLayoutPanelBottom.Name = "flowLayoutPanelBottom";
             flowLayoutPanelBottom.Padding = new Padding(16, 17, 31, 17);
             flowLayoutPanelBottom.Size = new Size(483, 102);
-            flowLayoutPanelBottom.TabIndex = 3;
+            flowLayoutPanelBottom.TabIndex = 1;
             // 
             // btnSaveChanges
             // 
             btnSaveChanges.AutoSize = true;
             btnSaveChanges.DialogResult = DialogResult.OK;
             btnSaveChanges.Location = new Point(21, 22);
-            btnSaveChanges.Margin = new Padding(5, 5, 5, 5);
+            btnSaveChanges.Margin = new Padding(5);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(181, 58);
             btnSaveChanges.TabIndex = 0;
@@ -71,7 +71,7 @@
             btnCancel.AutoSize = true;
             btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.Location = new Point(212, 22);
-            btnCancel.Margin = new Padding(5, 5, 5, 5);
+            btnCancel.Margin = new Padding(5);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(138, 58);
             btnCancel.TabIndex = 1;
@@ -84,20 +84,22 @@
             panelFill.Controls.Add(labelGenreName);
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 0);
-            panelFill.Margin = new Padding(5, 5, 5, 5);
+            panelFill.Margin = new Padding(5);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(16, 17, 31, 17);
             panelFill.Size = new Size(483, 206);
-            panelFill.TabIndex = 2;
+            panelFill.TabIndex = 0;
             // 
             // textBoxGenreName
             // 
             textBoxGenreName.Dock = DockStyle.Top;
             textBoxGenreName.Location = new Point(16, 42);
-            textBoxGenreName.Margin = new Padding(5, 5, 5, 5);
+            textBoxGenreName.Margin = new Padding(5);
             textBoxGenreName.Name = "textBoxGenreName";
             textBoxGenreName.Size = new Size(436, 33);
             textBoxGenreName.TabIndex = 1;
+            textBoxGenreName.TextChanged += TextBoxGenreName_TextChanged;
+            textBoxGenreName.Validating += TextBoxGenreName_Validating;
             // 
             // labelGenreName
             // 
@@ -123,7 +125,7 @@
             Controls.Add(flowLayoutPanelBottom);
             Controls.Add(panelFill);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "FormAddGenre";
             Text = "FormAddGenre";
             flowLayoutPanelBottom.ResumeLayout(false);

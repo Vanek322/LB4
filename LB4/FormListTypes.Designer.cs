@@ -53,7 +53,6 @@
             flowLayoutPanelTop.Padding = new Padding(10);
             flowLayoutPanelTop.Size = new Size(890, 65);
             flowLayoutPanelTop.TabIndex = 0;
-            flowLayoutPanelTop.Paint += this.flowLayoutPanelTop_Paint;
             // 
             // btnAddType
             // 
@@ -109,7 +108,6 @@
             dataGridViewTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewTypes.Size = new Size(870, 390);
             dataGridViewTypes.TabIndex = 3;
-            dataGridViewTypes.CellContentClick += this.dataGridViewTypes_CellContentClick;
             // 
             // panelFill
             // 

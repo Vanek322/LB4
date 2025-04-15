@@ -1,13 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using AppContext = LB4.Models.AppContext;
 using Genre = LB4.Models.Genre;
 
@@ -22,17 +15,17 @@ namespace LB4
         }
         protected override void OnLoad(EventArgs e)
         {
-            base.OnLoad(e);
+            base.OnLoad(e); 
             this.db = new AppContext();
             this.db.Genres.Load();
             this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
 
             //скрытие столбцов
             dataGridViewGenres.Columns["Id"].Visible = false;
-            dataGridViewGenres.Columns["AnimeTitles"].Visible = false;
+           // dataGridViewGenres.Columns["AnimeTitles"].Visible = false;
 
             //переименование заголовков столбцов
-            dataGridViewGenres.Columns["TypeName"].HeaderText = "Жанр аниме";
+            dataGridViewGenres.Columns["GenreName"].HeaderText = "Жанр аниме";
 
         }
 
@@ -90,7 +83,7 @@ namespace LB4
             }
 
             genre.GenreName = formAddGenre.textBoxGenreName.Text;
-            db.Types.Update(genre);
+            db.Genres.Update(genre);
             db.SaveChanges();
 
             MessageBox.Show("Объект изменен");
@@ -124,24 +117,13 @@ namespace LB4
             {
                 return;
             }
-            Type type = db.Types.Find(id);
+            Genre genre = db.Genres.Find(id);
 
-            db.Types.Remove(type);
+            db.Genres.Remove(genre);
             db.SaveChanges();
 
             MessageBox.Show("Объект удален");
-            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
-        }
-
-        private void panelFill_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void bntUpdateType_Click(object sender, EventArgs e)
-        {
-
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
         }
     }
 }

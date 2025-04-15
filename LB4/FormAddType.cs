@@ -8,7 +8,6 @@ namespace LB4
         {
             InitializeComponent();
         }
-
         private void TextBoxTypeName_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxTypeName.Text))

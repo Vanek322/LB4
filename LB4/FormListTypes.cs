@@ -9,13 +9,10 @@ namespace LB4
     public partial class FormListTypes : Form
     {
         private AppContext db;
-
-
         public FormListTypes()
         {
             InitializeComponent();
         }
-
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);

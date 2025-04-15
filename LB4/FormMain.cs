@@ -18,5 +18,12 @@ namespace LB4
             FormListGenres formListGenres = new FormListGenres();
             formListGenres.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormListStatuses formListStatuses = new FormListStatuses();
+            formListStatuses.Show();
+        }
     }
 }
+ 

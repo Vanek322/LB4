@@ -30,6 +30,7 @@
         {
             btnShowTypes = new Button();
             btnShowGenres = new Button();
+            btnShowStatuses = new Button();
             SuspendLayout();
             // 
             // btnShowTypes
@@ -37,7 +38,7 @@
             btnShowTypes.AutoSize = true;
             btnShowTypes.Location = new Point(14, 12);
             btnShowTypes.Name = "btnShowTypes";
-            btnShowTypes.Size = new Size(313, 51);
+            btnShowTypes.Size = new Size(337, 51);
             btnShowTypes.TabIndex = 0;
             btnShowTypes.Text = "Отобразить список \"Типы аниме\"";
             btnShowTypes.UseVisualStyleBackColor = true;
@@ -48,11 +49,22 @@
             btnShowGenres.AutoSize = true;
             btnShowGenres.Location = new Point(14, 82);
             btnShowGenres.Name = "btnShowGenres";
-            btnShowGenres.Size = new Size(329, 51);
+            btnShowGenres.Size = new Size(337, 51);
             btnShowGenres.TabIndex = 1;
             btnShowGenres.Text = "Отобразить список \"Жанры аниме\"";
             btnShowGenres.UseVisualStyleBackColor = true;
             btnShowGenres.Click += BtnShowGenres_Click;
+            // 
+            // btnShowStatuses
+            // 
+            btnShowStatuses.AutoSize = true;
+            btnShowStatuses.Location = new Point(14, 157);
+            btnShowStatuses.Name = "btnShowStatuses";
+            btnShowStatuses.Size = new Size(337, 51);
+            btnShowStatuses.TabIndex = 2;
+            btnShowStatuses.Text = "Отобразить список \"Статусы аниме\"";
+            btnShowStatuses.UseVisualStyleBackColor = true;
+            btnShowStatuses.Click += button1_Click;
             // 
             // FormMain
             // 
@@ -60,6 +72,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(677, 358);
+            Controls.Add(btnShowStatuses);
             Controls.Add(btnShowGenres);
             Controls.Add(btnShowTypes);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -74,5 +87,6 @@
 
         private Button btnShowTypes;
         private Button btnShowGenres;
+        private Button btnShowStatuses;
     }
 }

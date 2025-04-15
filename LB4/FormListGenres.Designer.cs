@@ -32,11 +32,11 @@
             btnAddGenre = new Button();
             bntUpdateGenre = new Button();
             btnDeleteGenre = new Button();
-            dataGridViewGenres = new DataGridView();
             panelFill = new Panel();
+            dataGridViewGenres = new DataGridView();
             flowLayoutPanelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewGenres).BeginInit();
             panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewGenres).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanelTop
@@ -53,6 +53,7 @@
             flowLayoutPanelTop.Padding = new Padding(10);
             flowLayoutPanelTop.Size = new Size(800, 65);
             flowLayoutPanelTop.TabIndex = 5;
+            flowLayoutPanelTop.Click += BntUpdateGenre_Click;
             // 
             // btnAddGenre
             // 
@@ -65,7 +66,7 @@
             btnAddGenre.TabIndex = 0;
             btnAddGenre.Text = "Добавить";
             btnAddGenre.UseVisualStyleBackColor = true;
-            btnAddGenre.Click += btnAddGenre_Click;
+            btnAddGenre.Click += BtnAddGenre_Click;
             // 
             // bntUpdateGenre
             // 
@@ -78,7 +79,7 @@
             bntUpdateGenre.TabIndex = 1;
             bntUpdateGenre.Text = "Редактировать";
             bntUpdateGenre.UseVisualStyleBackColor = true;
-            bntUpdateGenre.Click += bntUpdateType_Click;
+            bntUpdateGenre.Click += BntUpdateGenre_Click;
             // 
             // btnDeleteGenre
             // 
@@ -91,6 +92,18 @@
             btnDeleteGenre.TabIndex = 2;
             btnDeleteGenre.Text = "Удалить";
             btnDeleteGenre.UseVisualStyleBackColor = true;
+            btnDeleteGenre.Click += BtnDeleteGenre_Click;
+            // 
+            // panelFill
+            // 
+            panelFill.Controls.Add(dataGridViewGenres);
+            panelFill.Dock = DockStyle.Fill;
+            panelFill.Location = new Point(0, 65);
+            panelFill.Margin = new Padding(5);
+            panelFill.Name = "panelFill";
+            panelFill.Padding = new Padding(10);
+            panelFill.Size = new Size(800, 385);
+            panelFill.TabIndex = 7;
             // 
             // dataGridViewGenres
             // 
@@ -105,33 +118,22 @@
             dataGridViewGenres.Name = "dataGridViewGenres";
             dataGridViewGenres.ReadOnly = true;
             dataGridViewGenres.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewGenres.Size = new Size(780, 430);
+            dataGridViewGenres.Size = new Size(780, 365);
             dataGridViewGenres.TabIndex = 3;
-            // 
-            // panelFill
-            // 
-            panelFill.Controls.Add(dataGridViewGenres);
-            panelFill.Dock = DockStyle.Fill;
-            panelFill.Location = new Point(0, 0);
-            panelFill.Margin = new Padding(5);
-            panelFill.Name = "panelFill";
-            panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(800, 450);
-            panelFill.TabIndex = 6;
             // 
             // FormListGenres
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(flowLayoutPanelTop);
             Controls.Add(panelFill);
+            Controls.Add(flowLayoutPanelTop);
             Name = "FormListGenres";
             Text = "FormListGenres";
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewGenres).EndInit();
             panelFill.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewGenres).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,7 +144,7 @@
         private Button btnAddGenre;
         private Button bntUpdateGenre;
         private Button btnDeleteGenre;
-        private DataGridView dataGridViewGenres;
         private Panel panelFill;
+        private DataGridView dataGridViewGenres;
     }
 }
