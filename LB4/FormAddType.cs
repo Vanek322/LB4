@@ -1,13 +1,18 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel;
+using AppContext = LB4.Models.AppContext;
 
 namespace LB4
 {
     public partial class FormAddType : Form
     {
+        private AppContext db;
         public FormAddType()
         {
             InitializeComponent();
+            this.db = new AppContext();
         }
+
         private void TextBoxTypeName_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxTypeName.Text))
@@ -19,6 +24,13 @@ namespace LB4
             {
                 errorProvider.Clear();
                 btnSaveChanges.Enabled = true;
+            }
+            string newTypeName = textBoxTypeName.Text;
+            bool exists = db.Types.Any(t => t.TypeName.ToLower() == newTypeName.ToLower());
+            if (exists)
+            {
+                MessageBox.Show("Тип с таким именем уже существует.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 

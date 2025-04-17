@@ -46,6 +46,7 @@ namespace LB4
             {
                 return;
             }
+
             Type type = new Type();
             type.TypeName = formAddType.textBoxTypeName.Text;
 

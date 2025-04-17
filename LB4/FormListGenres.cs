@@ -46,6 +46,16 @@ namespace LB4
             {
                 return;
             }
+
+            string newGenreName = formAddGenre.textBoxGenreName.Text;
+
+            bool exists = db.Genres.Any(t => t.GenreName.ToLower() == newGenreName.ToLower());
+            if (exists)
+            {
+                MessageBox.Show("Жанр с таким именем уже существует.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Genre genre = new Genre();
             genre.GenreName = formAddGenre.textBoxGenreName.Text;
 

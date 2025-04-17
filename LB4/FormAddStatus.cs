@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
+using AppContext = LB4.Models.AppContext;
 
 namespace LB4
 {
     public partial class FormAddStatus : Form
     {
+        private AppContext db;
         public FormAddStatus()
         {
             InitializeComponent();
+            this.db = new AppContext();
         }
         private void TextBoxGenreName_Validating(object sender, CancelEventArgs e)
         {
@@ -27,6 +22,15 @@ namespace LB4
             {
                 errorProvider.Clear();
                 btnSaveChanges.Enabled = true;
+            }
+
+            string newStatusName = textBoxStatusName.Text;
+            bool exists = db.Statuses.Any(t => t.StatusName.ToLower() == newStatusName.ToLower());
+            if (exists)
+            {
+                errorProvider.SetError(textBoxStatusName, "Жанр с таким именем уже существует.");
+                btnSaveChanges.Enabled = false;
+                return;
             }
         }
 
@@ -41,6 +45,16 @@ namespace LB4
             {
                 errorProvider.Clear();
                 btnSaveChanges.Enabled = true;
+            }
+
+            string newStatusName = textBoxStatusName.Text;
+
+            bool exists = db.Statuses.Any(t => t.StatusName.ToLower() == newStatusName.ToLower());
+            if (exists)
+            {
+                errorProvider.SetError(textBoxStatusName, "Жанр с таким именем уже существует.");
+                btnSaveChanges.Enabled = false;
+                return;
             }
         }
     }

@@ -22,7 +22,7 @@ namespace LB4
 
             //скрытие столбцов
             dataGridViewStatuses.Columns["Id"].Visible = false;
-            // dataGridViewGenres.Columns["AnimeTitles"].Visible = false;
+            //dataGridViewStatuses.Columns["AnimeTitles"].Visible = false;
 
             //переименование заголовков столбцов
             dataGridViewStatuses.Columns["StatusName"].HeaderText = "Жанр аниме";
@@ -46,6 +46,16 @@ namespace LB4
             {
                 return;
             }
+
+            string newStatusName = formAddStatus.textBoxStatusName.Text;
+
+            bool exists = db.Statuses.Any(t => t.StatusName.ToLower() == newStatusName.ToLower());
+            if (exists)
+            {
+                MessageBox.Show("Статус с таким именем уже существует.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            } 
+
             Status status = new Status();
             status.StatusName = formAddStatus.textBoxStatusName.Text;
 
