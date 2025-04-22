@@ -95,7 +95,7 @@
             textBoxTypeName.Name = "textBoxTypeName";
             textBoxTypeName.Size = new Size(404, 33);
             textBoxTypeName.TabIndex = 1;
-            textBoxTypeName.TextChanged += textBoxTypeName_TextChanged;
+            textBoxTypeName.TextChanged += TextBoxTypeName_TextChanged;
             textBoxTypeName.Validating += TextBoxTypeName_Validating;
             // 
             // labelTypeName

@@ -25,16 +25,18 @@ namespace LB4
                 errorProvider.Clear();
                 btnSaveChanges.Enabled = true;
             }
+            
             string newTypeName = textBoxTypeName.Text;
             bool exists = db.Types.Any(t => t.TypeName.ToLower() == newTypeName.ToLower());
             if (exists)
             {
-                MessageBox.Show("Тип с таким именем уже существует.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProvider.SetError(textBoxTypeName, "Тип с таким именем уже существует.");
+                btnSaveChanges.Enabled = false;
                 return;
             }
         }
 
-        private void textBoxTypeName_TextChanged(object sender, EventArgs e)
+        private void TextBoxTypeName_TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxTypeName.Text))
             {
@@ -45,6 +47,15 @@ namespace LB4
             {
                 errorProvider.Clear();
                 btnSaveChanges.Enabled = true;
+            }
+
+            string newTypeName = textBoxTypeName.Text;
+            bool exists = db.Types.Any(t => t.TypeName.ToLower() == newTypeName.ToLower());
+            if (exists)
+            {
+                errorProvider.SetError(textBoxTypeName, "Тип с таким именем уже существует.");
+                btnSaveChanges.Enabled = false;
+                return;
             }
         }
     }

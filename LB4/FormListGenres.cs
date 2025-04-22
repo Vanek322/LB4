@@ -22,7 +22,7 @@ namespace LB4
 
             //скрытие столбцов
             dataGridViewGenres.Columns["Id"].Visible = false;
-           // dataGridViewGenres.Columns["AnimeTitles"].Visible = false;
+            dataGridViewGenres.Columns["TitlesGenres"].Visible = false;
 
             //переименование заголовков столбцов
             dataGridViewGenres.Columns["GenreName"].HeaderText = "Жанр аниме";
