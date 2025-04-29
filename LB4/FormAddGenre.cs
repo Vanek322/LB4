@@ -28,7 +28,7 @@ namespace LB4
             bool exists = db.Genres.Any(t => t.GenreName.ToLower() == newGenreName.ToLower());
             if (exists)
             {
-                errorProvider.SetError(textBoxGenreName,"Жанр с таким именем уже существует.");
+                errorProvider.SetError(textBoxGenreName,"Жанр с таким именем уже существует");
                 btnSaveChanges.Enabled = false;
                 return;
             }
@@ -51,7 +51,7 @@ namespace LB4
             bool exists = db.Genres.Any(t => t.GenreName.ToLower() == newGenreName.ToLower());
             if (exists)
             {
-                errorProvider.SetError(textBoxGenreName, "Жанр с таким именем уже существует.");
+                errorProvider.SetError(textBoxGenreName, "Жанр с таким именем уже существует");
                 btnSaveChanges.Enabled = false;
                 return;
             }

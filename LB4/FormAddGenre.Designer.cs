@@ -32,13 +32,13 @@
             flowLayoutPanelBottom = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
+            errorProvider = new ErrorProvider(components);
             panelFill = new Panel();
             textBoxGenreName = new TextBox();
             labelGenreName = new Label();
-            errorProvider = new ErrorProvider(components);
             flowLayoutPanelBottom.SuspendLayout();
-            panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            panelFill.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanelBottom
@@ -47,21 +47,20 @@
             flowLayoutPanelBottom.Controls.Add(btnSaveChanges);
             flowLayoutPanelBottom.Controls.Add(btnCancel);
             flowLayoutPanelBottom.Dock = DockStyle.Bottom;
-            flowLayoutPanelBottom.Location = new Point(0, 104);
-            flowLayoutPanelBottom.Margin = new Padding(5);
+            flowLayoutPanelBottom.Location = new Point(0, 106);
             flowLayoutPanelBottom.Name = "flowLayoutPanelBottom";
-            flowLayoutPanelBottom.Padding = new Padding(16, 17, 31, 17);
-            flowLayoutPanelBottom.Size = new Size(483, 102);
+            flowLayoutPanelBottom.Padding = new Padding(10, 10, 20, 10);
+            flowLayoutPanelBottom.Size = new Size(409, 65);
             flowLayoutPanelBottom.TabIndex = 1;
             // 
             // btnSaveChanges
             // 
             btnSaveChanges.AutoSize = true;
             btnSaveChanges.DialogResult = DialogResult.OK;
-            btnSaveChanges.Location = new Point(21, 22);
+            btnSaveChanges.Location = new Point(15, 15);
             btnSaveChanges.Margin = new Padding(5);
             btnSaveChanges.Name = "btnSaveChanges";
-            btnSaveChanges.Size = new Size(181, 58);
+            btnSaveChanges.Size = new Size(115, 35);
             btnSaveChanges.TabIndex = 0;
             btnSaveChanges.Text = "Сохранить";
             btnSaveChanges.UseVisualStyleBackColor = true;
@@ -70,13 +69,17 @@
             // 
             btnCancel.AutoSize = true;
             btnCancel.DialogResult = DialogResult.Cancel;
-            btnCancel.Location = new Point(212, 22);
+            btnCancel.Location = new Point(140, 15);
             btnCancel.Margin = new Padding(5);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(138, 58);
+            btnCancel.Size = new Size(88, 35);
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
             // 
             // panelFill
             // 
@@ -84,19 +87,18 @@
             panelFill.Controls.Add(labelGenreName);
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 0);
-            panelFill.Margin = new Padding(5);
             panelFill.Name = "panelFill";
-            panelFill.Padding = new Padding(16, 17, 31, 17);
-            panelFill.Size = new Size(483, 206);
+            panelFill.Padding = new Padding(10, 10, 20, 10);
+            panelFill.Size = new Size(409, 106);
             panelFill.TabIndex = 0;
             // 
             // textBoxGenreName
             // 
             textBoxGenreName.Dock = DockStyle.Top;
-            textBoxGenreName.Location = new Point(16, 42);
+            textBoxGenreName.Location = new Point(10, 35);
             textBoxGenreName.Margin = new Padding(5);
             textBoxGenreName.Name = "textBoxGenreName";
-            textBoxGenreName.Size = new Size(436, 33);
+            textBoxGenreName.Size = new Size(379, 33);
             textBoxGenreName.TabIndex = 1;
             textBoxGenreName.TextChanged += TextBoxGenreName_TextChanged;
             textBoxGenreName.Validating += TextBoxGenreName_Validating;
@@ -105,34 +107,30 @@
             // 
             labelGenreName.AutoSize = true;
             labelGenreName.Dock = DockStyle.Top;
-            labelGenreName.Location = new Point(16, 17);
+            labelGenreName.Location = new Point(10, 10);
             labelGenreName.Margin = new Padding(5, 0, 5, 0);
             labelGenreName.Name = "labelGenreName";
             labelGenreName.Size = new Size(120, 25);
             labelGenreName.TabIndex = 0;
             labelGenreName.Text = "Жанр аниме";
             // 
-            // errorProvider
-            // 
-            errorProvider.ContainerControl = this;
-            // 
             // FormAddGenre
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(483, 206);
-            Controls.Add(flowLayoutPanelBottom);
+            ClientSize = new Size(409, 171);
             Controls.Add(panelFill);
+            Controls.Add(flowLayoutPanelBottom);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormAddGenre";
-            Text = "FormAddGenre";
+            Text = "Информация о жанре аниме";
             flowLayoutPanelBottom.ResumeLayout(false);
             flowLayoutPanelBottom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,9 +140,9 @@
         private FlowLayoutPanel flowLayoutPanelBottom;
         private Button btnSaveChanges;
         private Button btnCancel;
+        private ErrorProvider errorProvider;
         private Panel panelFill;
         protected internal TextBox textBoxGenreName;
         private Label labelGenreName;
-        private ErrorProvider errorProvider;
     }
 }

@@ -35,6 +35,7 @@
             panelFill = new Panel();
             dataGridViewStatuses = new DataGridView();
             flowLayoutPanelTop.SuspendLayout();
+            panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStatuses).BeginInit();
             SuspendLayout();
             // 
@@ -53,7 +54,6 @@
             // 
             // flowLayoutPanelTop
             // 
-            flowLayoutPanelTop.AutoSize = true;
             flowLayoutPanelTop.Controls.Add(btnAddStatus);
             flowLayoutPanelTop.Controls.Add(bntUpdateStatus);
             flowLayoutPanelTop.Controls.Add(btnDeleteStatus);
@@ -94,13 +94,14 @@
             // 
             // panelFill
             // 
+            panelFill.Controls.Add(dataGridViewStatuses);
             panelFill.Dock = DockStyle.Fill;
-            panelFill.Location = new Point(0, 0);
+            panelFill.Location = new Point(0, 65);
             panelFill.Margin = new Padding(5);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(800, 450);
-            panelFill.TabIndex = 9;
+            panelFill.Size = new Size(800, 385);
+            panelFill.TabIndex = 10;
             // 
             // dataGridViewStatuses
             // 
@@ -109,30 +110,31 @@
             dataGridViewStatuses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewStatuses.Dock = DockStyle.Fill;
             dataGridViewStatuses.GridColor = Color.Gray;
-            dataGridViewStatuses.Location = new Point(0, 65);
+            dataGridViewStatuses.Location = new Point(10, 10);
             dataGridViewStatuses.Margin = new Padding(5);
             dataGridViewStatuses.MultiSelect = false;
             dataGridViewStatuses.Name = "dataGridViewStatuses";
             dataGridViewStatuses.ReadOnly = true;
             dataGridViewStatuses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewStatuses.Size = new Size(800, 385);
-            dataGridViewStatuses.TabIndex = 10;
+            dataGridViewStatuses.Size = new Size(780, 365);
+            dataGridViewStatuses.TabIndex = 13;
             // 
             // FormListStatuses
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridViewStatuses);
-            Controls.Add(flowLayoutPanelTop);
             Controls.Add(panelFill);
+            Controls.Add(flowLayoutPanelTop);
+            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            Margin = new Padding(5);
             Name = "FormListStatuses";
-            Text = "FormListStatuses";
+            Text = "Список статусов аниме";
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
+            panelFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewStatuses).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

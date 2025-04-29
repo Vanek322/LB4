@@ -49,10 +49,10 @@
             flowLayoutPanelBottom.Controls.Add(btnSaveChanges);
             flowLayoutPanelBottom.Controls.Add(btnCancel);
             flowLayoutPanelBottom.Dock = DockStyle.Bottom;
-            flowLayoutPanelBottom.Location = new Point(0, 84);
+            flowLayoutPanelBottom.Location = new Point(0, 110);
             flowLayoutPanelBottom.Name = "flowLayoutPanelBottom";
             flowLayoutPanelBottom.Padding = new Padding(10, 10, 20, 10);
-            flowLayoutPanelBottom.Size = new Size(434, 61);
+            flowLayoutPanelBottom.Size = new Size(409, 61);
             flowLayoutPanelBottom.TabIndex = 1;
             // 
             // btnSaveChanges
@@ -85,7 +85,7 @@
             panelFill.Location = new Point(0, 0);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10, 10, 20, 10);
-            panelFill.Size = new Size(434, 84);
+            panelFill.Size = new Size(409, 110);
             panelFill.TabIndex = 0;
             // 
             // textBoxTypeName
@@ -93,7 +93,7 @@
             textBoxTypeName.Dock = DockStyle.Top;
             textBoxTypeName.Location = new Point(10, 35);
             textBoxTypeName.Name = "textBoxTypeName";
-            textBoxTypeName.Size = new Size(404, 33);
+            textBoxTypeName.Size = new Size(379, 33);
             textBoxTypeName.TabIndex = 1;
             textBoxTypeName.TextChanged += TextBoxTypeName_TextChanged;
             textBoxTypeName.Validating += TextBoxTypeName_Validating;
@@ -121,7 +121,7 @@
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(434, 145);
+            ClientSize = new Size(409, 171);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelBottom);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);

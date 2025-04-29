@@ -28,7 +28,7 @@ namespace LB4
             bool exists = db.Statuses.Any(t => t.StatusName.ToLower() == newStatusName.ToLower());
             if (exists)
             {
-                errorProvider.SetError(textBoxStatusName, "Статус с таким именем уже существует.");
+                errorProvider.SetError(textBoxStatusName, "Статус с таким именем уже существует");
                 btnSaveChanges.Enabled = false;
                 return;
             }
@@ -52,7 +52,7 @@ namespace LB4
             bool exists = db.Statuses.Any(t => t.StatusName.ToLower() == newStatusName.ToLower());
             if (exists)
             {
-                errorProvider.SetError(textBoxStatusName, "Статус с таким именем уже существует.");
+                errorProvider.SetError(textBoxStatusName, "Статус с таким именем уже существует");
                 btnSaveChanges.Enabled = false;
                 return;
             }

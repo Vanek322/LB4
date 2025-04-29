@@ -15,7 +15,7 @@ namespace LB4
         }
         protected override void OnLoad(EventArgs e)
         {
-            base.OnLoad(e); 
+            base.OnLoad(e);
             this.db = new AppContext();
             this.db.Genres.Load();
             this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
@@ -26,7 +26,6 @@ namespace LB4
 
             //переименование заголовков столбцов
             dataGridViewGenres.Columns["GenreName"].HeaderText = "Жанр аниме";
-
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -52,7 +51,7 @@ namespace LB4
             bool exists = db.Genres.Any(t => t.GenreName.ToLower() == newGenreName.ToLower());
             if (exists)
             {
-                MessageBox.Show("Жанр с таким именем уже существует.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Жанр с таким именем уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

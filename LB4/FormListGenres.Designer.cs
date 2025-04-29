@@ -41,7 +41,6 @@
             // 
             // flowLayoutPanelTop
             // 
-            flowLayoutPanelTop.AutoSize = true;
             flowLayoutPanelTop.Controls.Add(btnAddGenre);
             flowLayoutPanelTop.Controls.Add(bntUpdateGenre);
             flowLayoutPanelTop.Controls.Add(btnDeleteGenre);
@@ -123,19 +122,20 @@
             // 
             // FormListGenres
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelTop);
+            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            Margin = new Padding(5);
             Name = "FormListGenres";
-            Text = "FormListGenres";
+            Text = "Список жанров аниме";
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
             panelFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewGenres).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
