@@ -24,6 +24,17 @@ namespace LB4
             FormListStatuses formListStatuses = new FormListStatuses();
             formListStatuses.Show();
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnShowTitles_Click(object sender, EventArgs e)
+        {
+            FormListTitles formListTitles = new FormListTitles();
+            formListTitles.Show();
+        }
     }
 }
  

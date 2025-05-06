@@ -4,10 +4,10 @@ using AppContext = LB4.Models.AppContext;
 
 namespace LB4
 {
-    public partial class FormAddType : Form
+    public partial class FormAddUpdateType : Form
     {
         private AppContext db;
-        public FormAddType()
+        public FormAddUpdateType()
         {
             InitializeComponent();
             this.db = new AppContext();
