@@ -92,6 +92,7 @@ namespace LB4
 
             Type type = (Type)formAddUpdateTitle.comboBoxType.SelectedItem;
             animeTitle.IdType = type.Id;
+            
         }
     }
 }
