@@ -65,6 +65,7 @@
             btnAddTitle.TabIndex = 0;
             btnAddTitle.Text = "Добавить";
             btnAddTitle.UseVisualStyleBackColor = true;
+            btnAddTitle.Click += BtnAddTitle_Click;
             // 
             // bntUpdateTitle
             // 
@@ -104,6 +105,7 @@
             // dataGridViewTitles
             // 
             dataGridViewTitles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewTitles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewTitles.BackgroundColor = Color.White;
             dataGridViewTitles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTitles.Dock = DockStyle.Fill;
@@ -128,6 +130,7 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormListTitles";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Тайтлы аниме";
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();

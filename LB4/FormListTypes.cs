@@ -39,8 +39,8 @@ namespace LB4
 
         private void BtnAddType_Click(object sender, EventArgs e)
         {
-            FormAddUpdateType formAddType = new();
-            DialogResult result = formAddType.ShowDialog(this);
+            FormAddUpdateType formAddUpdateType = new();
+            DialogResult result = formAddUpdateType.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
             {
@@ -48,7 +48,7 @@ namespace LB4
             }
 
             Type type = new Type();
-            type.TypeName = formAddType.textBoxTypeName.Text;
+            type.TypeName = formAddUpdateType.textBoxTypeName.Text;
 
             db.Types.Add(type);
             db.SaveChanges();

@@ -32,24 +32,24 @@
             btnSaveChanges = new Button();
             btnCancel = new Button();
             panelFill = new Panel();
-            textBoxOriginalName = new TextBox();
-            labelOriginalName = new Label();
+            textBoxDescription = new TextBox();
+            labelDescription = new Label();
+            textBoxStudio = new TextBox();
+            labelStudio = new Label();
+            numUpDownDuration = new NumericUpDown();
+            labelDuration = new Label();
+            numUpDownCountSeries = new NumericUpDown();
+            labelCountSeries = new Label();
+            comboBoxType = new ComboBox();
+            labelType = new Label();
             textBoxName = new TextBox();
             labelName = new Label();
-            labelType = new Label();
-            comboBoxType = new ComboBox();
-            labelCountSeries = new Label();
-            numUpDownCountSeries = new NumericUpDown();
-            labelDuration = new Label();
-            numUpDownDuration = new NumericUpDown();
-            labelStudio = new Label();
-            textBoxStudio = new TextBox();
-            labelDescription = new Label();
-            textBoxDescription = new TextBox();
+            textBoxOriginalName = new TextBox();
+            labelOriginalName = new Label();
             flowLayoutPanelBottom.SuspendLayout();
             panelFill.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numUpDownCountSeries).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numUpDownDuration).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numUpDownCountSeries).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanelBottom
@@ -109,24 +109,98 @@
             panelFill.Size = new Size(934, 512);
             panelFill.TabIndex = 3;
             // 
-            // textBoxOriginalName
+            // textBoxDescription
             // 
-            textBoxOriginalName.Dock = DockStyle.Top;
-            textBoxOriginalName.Location = new Point(10, 35);
-            textBoxOriginalName.Name = "textBoxOriginalName";
-            textBoxOriginalName.Size = new Size(904, 33);
-            textBoxOriginalName.TabIndex = 1;
+            textBoxDescription.Dock = DockStyle.Top;
+            textBoxDescription.Location = new Point(10, 383);
+            textBoxDescription.Name = "textBoxDescription";
+            textBoxDescription.ScrollBars = ScrollBars.Vertical;
+            textBoxDescription.Size = new Size(904, 33);
+            textBoxDescription.TabIndex = 13;
             // 
-            // labelOriginalName
+            // labelDescription
             // 
-            labelOriginalName.AutoSize = true;
-            labelOriginalName.Dock = DockStyle.Top;
-            labelOriginalName.Location = new Point(10, 10);
-            labelOriginalName.Name = "labelOriginalName";
-            labelOriginalName.Size = new Size(178, 25);
-            labelOriginalName.TabIndex = 0;
-            labelOriginalName.Text = "Оригинальное имя";
-            labelOriginalName.Click += labelOriginalName_Click;
+            labelDescription.AutoSize = true;
+            labelDescription.Dock = DockStyle.Top;
+            labelDescription.Location = new Point(10, 358);
+            labelDescription.Name = "labelDescription";
+            labelDescription.Size = new Size(99, 25);
+            labelDescription.TabIndex = 12;
+            labelDescription.Text = "Описание";
+            // 
+            // textBoxStudio
+            // 
+            textBoxStudio.Dock = DockStyle.Top;
+            textBoxStudio.Location = new Point(10, 325);
+            textBoxStudio.Name = "textBoxStudio";
+            textBoxStudio.Size = new Size(904, 33);
+            textBoxStudio.TabIndex = 11;
+            // 
+            // labelStudio
+            // 
+            labelStudio.AutoSize = true;
+            labelStudio.Dock = DockStyle.Top;
+            labelStudio.Location = new Point(10, 300);
+            labelStudio.Name = "labelStudio";
+            labelStudio.Size = new Size(158, 25);
+            labelStudio.TabIndex = 10;
+            labelStudio.Text = "Название студии";
+            // 
+            // numUpDownDuration
+            // 
+            numUpDownDuration.Dock = DockStyle.Top;
+            numUpDownDuration.Location = new Point(10, 267);
+            numUpDownDuration.Name = "numUpDownDuration";
+            numUpDownDuration.Size = new Size(904, 33);
+            numUpDownDuration.TabIndex = 9;
+            // 
+            // labelDuration
+            // 
+            labelDuration.AutoSize = true;
+            labelDuration.Dock = DockStyle.Top;
+            labelDuration.Location = new Point(10, 242);
+            labelDuration.Name = "labelDuration";
+            labelDuration.Size = new Size(296, 25);
+            labelDuration.TabIndex = 8;
+            labelDuration.Text = "Продолжительность серии, мин.";
+            // 
+            // numUpDownCountSeries
+            // 
+            numUpDownCountSeries.Dock = DockStyle.Top;
+            numUpDownCountSeries.Location = new Point(10, 209);
+            numUpDownCountSeries.Name = "numUpDownCountSeries";
+            numUpDownCountSeries.Size = new Size(904, 33);
+            numUpDownCountSeries.TabIndex = 7;
+            // 
+            // labelCountSeries
+            // 
+            labelCountSeries.AutoSize = true;
+            labelCountSeries.Dock = DockStyle.Top;
+            labelCountSeries.Location = new Point(10, 184);
+            labelCountSeries.Name = "labelCountSeries";
+            labelCountSeries.Size = new Size(130, 25);
+            labelCountSeries.TabIndex = 6;
+            labelCountSeries.Text = "Кол-во серий";
+            // 
+            // comboBoxType
+            // 
+            comboBoxType.Dock = DockStyle.Top;
+            comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxType.FormattingEnabled = true;
+            comboBoxType.Location = new Point(10, 151);
+            comboBoxType.Name = "comboBoxType";
+            comboBoxType.Size = new Size(904, 33);
+            comboBoxType.TabIndex = 5;
+            // 
+            // labelType
+            // 
+            labelType.AutoSize = true;
+            labelType.Dock = DockStyle.Top;
+            labelType.Location = new Point(10, 126);
+            labelType.Name = "labelType";
+            labelType.Size = new Size(44, 25);
+            labelType.TabIndex = 4;
+            labelType.Text = "Тип";
             // 
             // textBoxName
             // 
@@ -147,97 +221,24 @@
             labelName.Text = "Имя аниме";
             labelName.Click += labelName_Click;
             // 
-            // labelType
+            // textBoxOriginalName
             // 
-            labelType.AutoSize = true;
-            labelType.Dock = DockStyle.Top;
-            labelType.Location = new Point(10, 126);
-            labelType.Name = "labelType";
-            labelType.Size = new Size(44, 25);
-            labelType.TabIndex = 4;
-            labelType.Text = "Тип";
+            textBoxOriginalName.Dock = DockStyle.Top;
+            textBoxOriginalName.Location = new Point(10, 35);
+            textBoxOriginalName.Name = "textBoxOriginalName";
+            textBoxOriginalName.Size = new Size(904, 33);
+            textBoxOriginalName.TabIndex = 1;
             // 
-            // comboBoxType
+            // labelOriginalName
             // 
-            comboBoxType.Dock = DockStyle.Top;
-            comboBoxType.FormattingEnabled = true;
-            comboBoxType.Location = new Point(10, 151);
-            comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(904, 33);
-            comboBoxType.TabIndex = 5;
-            // 
-            // labelCountSeries
-            // 
-            labelCountSeries.AutoSize = true;
-            labelCountSeries.Dock = DockStyle.Top;
-            labelCountSeries.Location = new Point(10, 184);
-            labelCountSeries.Name = "labelCountSeries";
-            labelCountSeries.Size = new Size(130, 25);
-            labelCountSeries.TabIndex = 6;
-            labelCountSeries.Text = "Кол-во серий";
-            // 
-            // numUpDownCountSeries
-            // 
-            numUpDownCountSeries.Dock = DockStyle.Top;
-            numUpDownCountSeries.Location = new Point(10, 209);
-            numUpDownCountSeries.Name = "numUpDownCountSeries";
-            numUpDownCountSeries.Size = new Size(904, 33);
-            numUpDownCountSeries.TabIndex = 7;
-            // 
-            // labelDuration
-            // 
-            labelDuration.AutoSize = true;
-            labelDuration.Dock = DockStyle.Top;
-            labelDuration.Location = new Point(10, 242);
-            labelDuration.Name = "labelDuration";
-            labelDuration.Size = new Size(296, 25);
-            labelDuration.TabIndex = 8;
-            labelDuration.Text = "Продолжительность серии, мин.";
-            // 
-            // numUpDownDuration
-            // 
-            numUpDownDuration.Dock = DockStyle.Top;
-            numUpDownDuration.Location = new Point(10, 267);
-            numUpDownDuration.Name = "numUpDownDuration";
-            numUpDownDuration.Size = new Size(904, 33);
-            numUpDownDuration.TabIndex = 9;
-            // 
-            // labelStudio
-            // 
-            labelStudio.AutoSize = true;
-            labelStudio.Dock = DockStyle.Top;
-            labelStudio.Location = new Point(10, 300);
-            labelStudio.Name = "labelStudio";
-            labelStudio.Size = new Size(158, 25);
-            labelStudio.TabIndex = 10;
-            labelStudio.Text = "Название студии";
-            // 
-            // textBoxStudio
-            // 
-            textBoxStudio.Dock = DockStyle.Top;
-            textBoxStudio.Location = new Point(10, 325);
-            textBoxStudio.Name = "textBoxStudio";
-            textBoxStudio.Size = new Size(904, 33);
-            textBoxStudio.TabIndex = 11;
-            // 
-            // labelDescription
-            // 
-            labelDescription.AutoSize = true;
-            labelDescription.Dock = DockStyle.Top;
-            labelDescription.Location = new Point(10, 358);
-            labelDescription.Name = "labelDescription";
-            labelDescription.Size = new Size(99, 25);
-            labelDescription.TabIndex = 12;
-            labelDescription.Text = "Описание";
-            // 
-            // textBoxDescription
-            // 
-            textBoxDescription.Dock = DockStyle.Top;
-            textBoxDescription.Location = new Point(10, 383);
-            textBoxDescription.Name = "textBoxDescription";
-            textBoxDescription.ScrollBars = ScrollBars.Vertical;
-            textBoxDescription.Size = new Size(904, 33);
-            textBoxDescription.TabIndex = 13;
+            labelOriginalName.AutoSize = true;
+            labelOriginalName.Dock = DockStyle.Top;
+            labelOriginalName.Location = new Point(10, 10);
+            labelOriginalName.Name = "labelOriginalName";
+            labelOriginalName.Size = new Size(178, 25);
+            labelOriginalName.TabIndex = 0;
+            labelOriginalName.Text = "Оригинальное имя";
+            labelOriginalName.Click += labelOriginalName_Click;
             // 
             // FormAddUpdateTitle
             // 
@@ -250,13 +251,14 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
             Name = "FormAddUpdateTitle";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Информация об аниме";
             flowLayoutPanelBottom.ResumeLayout(false);
             flowLayoutPanelBottom.PerformLayout();
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numUpDownCountSeries).EndInit();
             ((System.ComponentModel.ISupportInitialize)numUpDownDuration).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numUpDownCountSeries).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -273,13 +275,13 @@
         private Label labelName;
         private Label labelType;
         private Label labelCountSeries;
-        private ComboBox comboBoxType;
         protected internal TextBox textBoxDescription;
         private Label labelDescription;
         protected internal TextBox textBoxStudio;
         private Label labelStudio;
-        private NumericUpDown numUpDownDuration;
         private Label labelDuration;
-        private NumericUpDown numUpDownCountSeries;
+        protected internal ComboBox comboBoxType;
+        protected internal NumericUpDown numUpDownDuration;
+        protected internal NumericUpDown numUpDownCountSeries;
     }
 }
