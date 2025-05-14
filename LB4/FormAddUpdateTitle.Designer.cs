@@ -58,10 +58,10 @@
             flowLayoutPanelBottom.Controls.Add(btnSaveChanges);
             flowLayoutPanelBottom.Controls.Add(btnCancel);
             flowLayoutPanelBottom.Dock = DockStyle.Bottom;
-            flowLayoutPanelBottom.Location = new Point(0, 512);
+            flowLayoutPanelBottom.Location = new Point(0, 540);
             flowLayoutPanelBottom.Name = "flowLayoutPanelBottom";
             flowLayoutPanelBottom.Padding = new Padding(10, 10, 20, 10);
-            flowLayoutPanelBottom.Size = new Size(934, 61);
+            flowLayoutPanelBottom.Size = new Size(884, 61);
             flowLayoutPanelBottom.TabIndex = 2;
             // 
             // btnSaveChanges
@@ -106,16 +106,17 @@
             panelFill.Location = new Point(0, 0);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10, 10, 20, 10);
-            panelFill.Size = new Size(934, 512);
+            panelFill.Size = new Size(884, 540);
             panelFill.TabIndex = 3;
             // 
             // textBoxDescription
             // 
-            textBoxDescription.Dock = DockStyle.Top;
+            textBoxDescription.Dock = DockStyle.Fill;
             textBoxDescription.Location = new Point(10, 383);
+            textBoxDescription.Multiline = true;
             textBoxDescription.Name = "textBoxDescription";
             textBoxDescription.ScrollBars = ScrollBars.Vertical;
-            textBoxDescription.Size = new Size(904, 33);
+            textBoxDescription.Size = new Size(854, 147);
             textBoxDescription.TabIndex = 13;
             // 
             // labelDescription
@@ -133,7 +134,7 @@
             textBoxStudio.Dock = DockStyle.Top;
             textBoxStudio.Location = new Point(10, 325);
             textBoxStudio.Name = "textBoxStudio";
-            textBoxStudio.Size = new Size(904, 33);
+            textBoxStudio.Size = new Size(854, 33);
             textBoxStudio.TabIndex = 11;
             // 
             // labelStudio
@@ -150,8 +151,9 @@
             // 
             numUpDownDuration.Dock = DockStyle.Top;
             numUpDownDuration.Location = new Point(10, 267);
+            numUpDownDuration.Maximum = new decimal(new int[] { 1440, 0, 0, 0 });
             numUpDownDuration.Name = "numUpDownDuration";
-            numUpDownDuration.Size = new Size(904, 33);
+            numUpDownDuration.Size = new Size(854, 33);
             numUpDownDuration.TabIndex = 9;
             // 
             // labelDuration
@@ -168,8 +170,9 @@
             // 
             numUpDownCountSeries.Dock = DockStyle.Top;
             numUpDownCountSeries.Location = new Point(10, 209);
+            numUpDownCountSeries.Maximum = new decimal(new int[] { 50000, 0, 0, 0 });
             numUpDownCountSeries.Name = "numUpDownCountSeries";
-            numUpDownCountSeries.Size = new Size(904, 33);
+            numUpDownCountSeries.Size = new Size(854, 33);
             numUpDownCountSeries.TabIndex = 7;
             // 
             // labelCountSeries
@@ -189,7 +192,7 @@
             comboBoxType.FormattingEnabled = true;
             comboBoxType.Location = new Point(10, 151);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(904, 33);
+            comboBoxType.Size = new Size(854, 33);
             comboBoxType.TabIndex = 5;
             // 
             // labelType
@@ -207,7 +210,7 @@
             textBoxName.Dock = DockStyle.Top;
             textBoxName.Location = new Point(10, 93);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(904, 33);
+            textBoxName.Size = new Size(854, 33);
             textBoxName.TabIndex = 3;
             // 
             // labelName
@@ -226,7 +229,7 @@
             textBoxOriginalName.Dock = DockStyle.Top;
             textBoxOriginalName.Location = new Point(10, 35);
             textBoxOriginalName.Name = "textBoxOriginalName";
-            textBoxOriginalName.Size = new Size(904, 33);
+            textBoxOriginalName.Size = new Size(854, 33);
             textBoxOriginalName.TabIndex = 1;
             // 
             // labelOriginalName
@@ -245,7 +248,7 @@
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(934, 573);
+            ClientSize = new Size(884, 601);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelBottom);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);

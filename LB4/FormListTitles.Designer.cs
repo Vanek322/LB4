@@ -78,6 +78,7 @@
             bntUpdateTitle.TabIndex = 1;
             bntUpdateTitle.Text = "Редактировать";
             bntUpdateTitle.UseVisualStyleBackColor = true;
+            bntUpdateTitle.Click += BntUpdateTitle_Click;
             // 
             // btnDeleteTitle
             // 
