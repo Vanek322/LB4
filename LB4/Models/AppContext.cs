@@ -17,7 +17,7 @@ public partial class AppContext : DbContext
     public virtual DbSet<Type> Types { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=LB4;Username=postgres;Password=1111");
+        => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Filimon_db_anime_titiles;Username=postgres;Password=1111");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

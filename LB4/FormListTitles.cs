@@ -1,14 +1,7 @@
 ﻿using LB4.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using AppContext = LB4.Models.AppContext;
 using Type = LB4.Models.Type;
 
@@ -28,19 +21,7 @@ namespace LB4
             base.OnLoad(e);
             this.db = new AppContext();
             this.db.AnimeTitles.Load();
-            this.dataGridViewTitles.DataSource = this.db.AnimeTitles
-                .Include(i => i.Type)
-                .Select(i => new
-                {
-                    i.Id,
-                    i.Type.TypeName,
-                    i.OriginalName,
-                    i.Name,
-                    i.CountSeries,
-                    i.Duration,
-                    i.Stidio
-                })
-                .OrderBy(i => i.TypeName).ThenBy(i => i.OriginalName).ToList();
+            LoadTitlesAnime();
 
             //скрытие столбцов
             dataGridViewTitles.Columns["id"].Visible = false;
@@ -97,20 +78,7 @@ namespace LB4
             db.SaveChanges();
 
             MessageBox.Show("Новый объект добавлен", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            this.dataGridViewTitles.DataSource = this.db.AnimeTitles
-                .Include(i => i.Type)
-                .Select(i => new
-                {
-                    i.Id,
-                    i.Type.TypeName,
-                    i.OriginalName,
-                    i.Name,
-                    i.CountSeries,
-                    i.Duration,
-                    i.Stidio
-                })
-                .OrderBy(i => i.TypeName).ThenBy(i => i.OriginalName).ToList();
+            LoadTitlesAnime();
         }
 
         private void BntUpdateTitle_Click(object sender, EventArgs e)
@@ -123,7 +91,7 @@ namespace LB4
             int index = dataGridViewTitles.SelectedRows[0].Index;
             int id = 0;
             bool converted = Int32.TryParse(dataGridViewTitles[0, index].Value.ToString(), out id);
-            if(!converted)
+            if (!converted)
             {
                 return;
             }
@@ -167,7 +135,46 @@ namespace LB4
             animeTitle.IdType = type.Id;
 
             MessageBox.Show("Объект изменен", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadTitlesAnime();
+        }
 
+        private void BtnDeleteTitle_Click(object sender, EventArgs e)
+        {
+            if(dataGridViewTitles.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Вы уверены, что хотите удалить объект? Все связанные данные будут удалены",
+                "",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question
+                );
+
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            int index = dataGridViewTitles.SelectedRows[0].Index;
+            int id = 0;
+            bool converted = Int32.TryParse(dataGridViewTitles[0, index].Value.ToString(), out id);
+            if (!converted)
+            {
+                return;
+            }
+            AnimeTitle animeTitle = db.AnimeTitles.Find(id)!;
+
+            db.AnimeTitles.Remove(animeTitle);
+            db.SaveChanges();
+
+            MessageBox.Show("Объект удален");
+            LoadTitlesAnime();
+        }
+
+        private void LoadTitlesAnime()
+        {
             this.dataGridViewTitles.DataSource = this.db.AnimeTitles
                 .Include(i => i.Type)
                 .Select(i => new

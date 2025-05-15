@@ -118,7 +118,7 @@ namespace LB4
             {
                 return;
             }
-            Type type = db.Types.Find(id);
+            Type type = db.Types.Find(id)!;
 
             db.Types.Remove(type);
             db.SaveChanges();

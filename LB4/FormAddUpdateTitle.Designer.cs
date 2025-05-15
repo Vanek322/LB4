@@ -271,7 +271,6 @@
         private FlowLayoutPanel flowLayoutPanelBottom;
         private Button btnSaveChanges;
         private Button btnCancel;
-        private Panel panelFill;
         protected internal TextBox textBoxOriginalName;
         private Label labelOriginalName;
         protected internal TextBox textBoxName;
@@ -283,8 +282,9 @@
         protected internal TextBox textBoxStudio;
         private Label labelStudio;
         private Label labelDuration;
-        protected internal ComboBox comboBoxType;
         protected internal NumericUpDown numUpDownDuration;
         protected internal NumericUpDown numUpDownCountSeries;
+        private Panel panelFill;
+        protected internal ComboBox comboBoxType;
     }
 }
